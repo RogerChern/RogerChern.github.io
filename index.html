@@ -144,6 +144,88 @@
           
           
             
+              <a class="post-title-link" href="/2015/08/19/Linear-Regression/">
+                Linear Regression
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2015-08-19
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/ML/">ML</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h4 id="Symbols">Symbols</h4><ul>
+<li>$X$ —- the design matrix</li>
+<li>$\theta$ —- the parameters of model</li>
+<li>$n$ —- number of features  <code>size(X,1)</code></li>
+<li>$m$ —- number of training samples  <code>size(X,2)</code></li>
+<li>$x^{(i)}$ —- the i-th training sample <code>X(i,:)</code></li>
+<li>$x_j$ — the j-th feature <code>X(:,j)</code></li>
+</ul>
+<h4 id="Hypothesis">Hypothesis</h4><p>$$h_\theta(x)=\theta^{T}x=\theta_0x_0+\theta_1x_1+\cdots+\theta_nx_n$$</p>
+<h4 id="Cost_function_(Sqaured_Error)">Cost function (Sqaured Error)</h4><p>$$J(\theta)=\dfrac{1}{2m}\sum<em>{i=1}^m\left[h</em>\theta(x^{(i)})-y^{(i)}\right]^2$$</p>
+<h4 id="Gradient_Descent">Gradient Descent</h4><h5 id="Normalization">Normalization</h5><p>$$x_i:=\dfrac{x_i-\mu_i}{\sigma_i}$$</p>
+<h5 id="Batch_version">Batch version</h5><p>$$\theta<em>j:=\theta_j-\alpha\dfrac{1}{m}\sum</em>{i=1}^m\left(h_\theta(x^{(i)})-y^{(i)}\right)x_j^{(i)}$$</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:n</span><br><span class="line">    temp(<span class="built_in">i</span>) = theta(<span class="built_in">i</span>) - alpha / m * sum((X * theta - y) * X(:,<span class="built_in">j</span>))</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:n</span><br><span class="line">    theta(<span class="built_in">i</span>) = temp(<span class="built_in">i</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h5 id="Random_version">Random version</h5>
+        
+      
+    </div>
+
+    <div class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </div>
+  </div>
+
+
+    
+      
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
               <a class="post-title-link" href="/2015/08/19/Use-pip-to-install-a-certain-version-of-package/">
                 Use pip to install a certain version of package
               </a>
@@ -699,14 +781,14 @@
         <div class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-count">9</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
