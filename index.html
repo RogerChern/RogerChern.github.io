@@ -184,17 +184,17 @@
       
         
           <h4 id="Symbols">Symbols</h4><ul>
-<li>$X$ —- the design matrix</li>
-<li>$\theta$ —- the parameters of model</li>
-<li>$n$ —- number of features  <code>size(X,1)</code></li>
-<li>$m$ —- number of training samples  <code>size(X,2)</code></li>
-<li>$x^{(i)}$ —- the i-th training sample <code>X(i,:)</code></li>
+<li>$X$ — the design matrix</li>
+<li>$\theta$ — the parameters of model</li>
+<li>$n$ — number of features  <code>size(X,1)</code></li>
+<li>$m$ — number of training samples  <code>size(X,2)</code></li>
+<li>$x^{(i)}$ — the i-th training sample <code>X(i,:)</code></li>
 <li>$x_j$ — the j-th feature <code>X(:,j)</code></li>
 </ul>
 <h4 id="Hypothesis">Hypothesis</h4><p>$$h_\theta(x)=\theta^{T}x=\theta_0x_0+\theta_1x_1+\cdots+\theta_nx_n$$</p>
-<h4 id="Cost_function_(Sqaured_Error)">Cost function (Sqaured Error)</h4><p>$$J(\theta)=\dfrac{1}{2m}\sum<em>{i=1}^m\left[h</em>\theta(x^{(i)})-y^{(i)}\right]^2$$</p>
+<h4 id="Cost_function_(Sqaured_Error)">Cost function (Sqaured Error)</h4><p>$$J(\theta)=\dfrac{1}{2m}\sum_{i=1}^m[h_\theta(x^{(i)})-y^{(i)}]^2$$</p>
 <h4 id="Gradient_Descent">Gradient Descent</h4><h5 id="Normalization">Normalization</h5><p>$$x_i:=\dfrac{x_i-\mu_i}{\sigma_i}$$</p>
-<h5 id="Batch_version">Batch version</h5><p>$$\theta<em>j:=\theta_j-\alpha\dfrac{1}{m}\sum</em>{i=1}^m\left(h_\theta(x^{(i)})-y^{(i)}\right)x_j^{(i)}$$</p>
+<h5 id="Batch_version">Batch version</h5><p>$$\theta_j:=\theta_j-\alpha\dfrac{1}{m}\sum_{i=1}^m(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)}$$</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:n</span><br><span class="line">    temp(<span class="built_in">i</span>) = theta(<span class="built_in">i</span>) - alpha / m * sum((X * theta - y) * X(:,<span class="built_in">j</span>))</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:n</span><br><span class="line">    theta(<span class="built_in">i</span>) = temp(<span class="built_in">i</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 <h5 id="Random_version">Random version</h5>
         
