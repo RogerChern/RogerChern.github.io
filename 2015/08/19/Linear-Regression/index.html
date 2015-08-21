@@ -55,7 +55,7 @@
 \(n\) – number of features size(X,1)
 \(m\) – number of training samples size(X,2)
 \(x^{(i)}\) – the i-th training sample X(i,:)">
-<meta property="og:updated_time" content="2015-08-21T09:17:46.000Z">
+<meta property="og:updated_time" content="2015-08-21T09:20:00.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linear Regression">
 <meta name="twitter:description" content="Symbols
@@ -225,7 +225,7 @@
 <h5 id="normalization">Normalization</h5>
 <p><span class="math display">\[x_i:=\dfrac{x_i-\mu_i}{\sigma_i}\]</span></p>
 <h5 id="batch-version">Batch version</h5>
-<p><span class="math display">\[\theta_j:=\theta_j-\alpha\dfrac{1}{m}\sum_{i=1}^m(h_\theta(x^{(i)})-y^{(i)})x_j^{(i) }\]</span></p>
+<p><span class="math display">\[\theta_j:=\theta_j-\alpha\dfrac{1}{m}\sum_{i=1}^m(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)}\]</span></p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:n</span><br><span class="line">    temp(<span class="built_in">i</span>) = theta(<span class="built_in">i</span>) - alpha / m * sum((X * theta - y) .* X(:,<span class="built_in">j</span>))</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:n</span><br><span class="line">    theta(<span class="built_in">i</span>) = temp(<span class="built_in">i</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
 <h5 id="random-version">Random version</h5>
 </span>
@@ -238,6 +238,8 @@
       
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/08/21/How-render-math-formula-in-hexo-correctly/" rel="prev">How render math formula in hexo correctly</a>
             
           </div>
 
@@ -306,14 +308,14 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">9</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>

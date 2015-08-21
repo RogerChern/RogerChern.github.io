@@ -37,16 +37,25 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
 
 
-<meta name="description" content="123456789101112\documentclass&amp;#123;article&amp;#125;\title&amp;#123;Title&amp;#125;\date&amp;#123;yyyy-mm-dd&amp;#125;\author&amp;#123;Author&amp;#125;\begin&amp;#123;document&amp;#125;	\pagenumbering&amp;#123;gobble&amp;#125;		\maketitle		\new">
+<meta name="description" content="solution
+The default hexo-renderer-marked will treat underscore as special character. To fullay utilize mathjax, we simply change the renderer to hexo-renderer-pandoc.
+package.json
+1234567891011121314">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Basic structure of LaTeX file">
-<meta property="og:url" content="https://rogerchern.github.io/2015/07/08/Basic-structure-of-LaTeX-file/index.html">
+<meta property="og:title" content="How render math formula in hexo correctly">
+<meta property="og:url" content="https://rogerchern.github.io/2015/08/21/How-render-math-formula-in-hexo-correctly/index.html">
 <meta property="og:site_name" content="Real Axis">
-<meta property="og:description" content="123456789101112\documentclass&amp;#123;article&amp;#125;\title&amp;#123;Title&amp;#125;\date&amp;#123;yyyy-mm-dd&amp;#125;\author&amp;#123;Author&amp;#125;\begin&amp;#123;document&amp;#125;	\pagenumbering&amp;#123;gobble&amp;#125;		\maketitle		\new">
-<meta property="og:updated_time" content="2015-07-08T03:15:26.000Z">
+<meta property="og:description" content="solution
+The default hexo-renderer-marked will treat underscore as special character. To fullay utilize mathjax, we simply change the renderer to hexo-renderer-pandoc.
+package.json
+1234567891011121314">
+<meta property="og:updated_time" content="2015-08-21T09:29:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Basic structure of LaTeX file">
-<meta name="twitter:description" content="123456789101112\documentclass&amp;#123;article&amp;#125;\title&amp;#123;Title&amp;#125;\date&amp;#123;yyyy-mm-dd&amp;#125;\author&amp;#123;Author&amp;#125;\begin&amp;#123;document&amp;#125;	\pagenumbering&amp;#123;gobble&amp;#125;		\maketitle		\new">
+<meta name="twitter:title" content="How render math formula in hexo correctly">
+<meta name="twitter:description" content="solution
+The default hexo-renderer-marked will treat underscore as special character. To fullay utilize mathjax, we simply change the renderer to hexo-renderer-pandoc.
+package.json
+1234567891011121314">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -56,7 +65,7 @@
   };
 </script>
 
-    <title> Basic structure of LaTeX file // Real Axis </title>
+    <title> How render math formula in hexo correctly // Real Axis </title>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 <!--[if lte IE 8]>
@@ -151,7 +160,7 @@
           
           
             
-              Basic structure of LaTeX file
+              How render math formula in hexo correctly
             
           
         </h1>
@@ -160,11 +169,22 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-07-08T11:12:10+08:00" content="2015-07-08">
-            2015-07-08
+          <time itemprop="dateCreated" datetime="2015-08-21T17:22:12+08:00" content="2015-08-21">
+            2015-08-21
           </time>
         </span>
 
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/Hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a></span>
+
+              
+              
+
+            
+          </span>
         
 
         
@@ -179,7 +199,11 @@
       
 
       
-        <span itemprop="articleBody"><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">\documentclass&#123;article&#125;</span></span><br><span class="line"><span class="string">\title&#123;Title&#125;</span></span><br><span class="line"><span class="string">\date&#123;yyyy-mm-dd&#125;</span></span><br><span class="line"><span class="string">\author&#123;Author&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="string">\begin&#123;document&#125;</span></span><br><span class="line">	<span class="string">\pagenumbering&#123;gobble&#125;</span></span><br><span class="line">		<span class="string">\maketitle</span></span><br><span class="line">		<span class="string">\newpage</span></span><br><span class="line">	<span class="string">\pagenumbering&#123;arabic&#125;</span></span><br><span class="line">		<span class="string">\LaTeX</span></span><br><span class="line"><span class="string">\end&#123;document&#125;</span></span><br></pre></td></tr></table></figure>
+        <span itemprop="articleBody"><h4 id="solution">solution</h4>
+<p>The default <code>hexo-renderer-marked</code> will treat underscore as special character. To fullay utilize mathjax, we simply change the renderer to <code>hexo-renderer-pandoc</code>.</p>
+<h4 id="package.json">package.json</h4>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "<span class="attribute">name</span>": <span class="value"><span class="string">"hexo-site"</span></span>,</span><br><span class="line">  "<span class="attribute">version</span>": <span class="value"><span class="string">"0.0.0"</span></span>,</span><br><span class="line">  "<span class="attribute">private</span>": <span class="value"><span class="literal">true</span></span>,</span><br><span class="line">  "<span class="attribute">hexo</span>": <span class="value">&#123;</span><br><span class="line">    "<span class="attribute">version</span>": <span class="value"><span class="string">"3.1.1"</span></span><br><span class="line">  </span>&#125;</span>,</span><br><span class="line">  "<span class="attribute">dependencies</span>": <span class="value">&#123;</span><br><span class="line">    "<span class="attribute">hexo</span>": <span class="value"><span class="string">"^3.1.0"</span></span>,</span><br><span class="line">    "<span class="attribute">hexo-deployer-git</span>": <span class="value"><span class="string">"0.0.4"</span></span>,</span><br><span class="line">    "<span class="attribute">hexo-generator-archive</span>": <span class="value"><span class="string">"^0.1.2"</span></span>,</span><br><span class="line">    "<span class="attribute">hexo-generator-category</span>": <span class="value"><span class="string">"^0.1.2"</span></span>,</span><br><span class="line">    "<span class="attribute">hexo-generator-index</span>": <span class="value"><span class="string">"^0.1.2"</span></span>,</span><br><span class="line">    "<span class="attribute">hexo-generator-tag</span>": <span class="value"><span class="string">"^0.1.1"</span></span>,</span><br><span class="line">    "<span class="attribute">hexo-renderer-ejs</span>": <span class="value"><span class="string">"^0.1.0"</span></span>,</span><br><span class="line">    "<span class="attribute">hexo-renderer-mathjax</span>": <span class="value"><span class="string">"^0.6.0"</span></span>,</span><br><span class="line">    "<span class="attribute">hexo-renderer-pandoc</span>": <span class="value"><span class="string">"0.0.9"</span></span>,</span><br><span class="line">    "<span class="attribute">hexo-renderer-stylus</span>": <span class="value"><span class="string">"^0.2.0"</span></span>,</span><br><span class="line">    "<span class="attribute">hexo-server</span>": <span class="value"><span class="string">"^0.1.2"</span></span><br><span class="line">  </span>&#125;</span><br><span class="line"></span>&#125;</span><br></pre></td></tr></table></figure>
+<p>Notice that <code>^</code> allows backward-compatible major version update while <code>~</code> accepts only bug fixs.</p>
 </span>
       
     </div>
@@ -191,13 +215,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/07/09/test/" rel="prev">test</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/07/07/How-to-search-in-vim/" rel="next">How to search in vim</a>
+              <a href="/2015/08/19/Linear-Regression/" rel="next">Linear Regression</a>
             
           </div>
         </div>
@@ -302,7 +324,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#solution"><span class="nav-number">1.</span> <span class="nav-text">solution</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#package.json"><span class="nav-number">2.</span> <span class="nav-text">package.json</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
