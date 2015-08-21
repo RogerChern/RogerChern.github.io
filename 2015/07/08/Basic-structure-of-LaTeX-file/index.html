@@ -20,6 +20,8 @@
 
 
 
+  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
 
 <link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.4"/>
 
@@ -37,16 +39,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
 
 
-<meta name="description" content="123456789101112\documentclass&amp;#123;article&amp;#125;\title&amp;#123;Title&amp;#125;\date&amp;#123;yyyy-mm-dd&amp;#125;\author&amp;#123;Author&amp;#125;\begin&amp;#123;document&amp;#125;	\pagenumbering&amp;#123;gobble&amp;#125;		\maketitle		\new">
+<meta name="description" content="123456789101112\documentclass&amp;#123;article&amp;#125;\title&amp;#123;Title&amp;#125;\date&amp;#123;yyyy-mm-dd&amp;#125;\author&amp;#123;Author&amp;#125;\begin&amp;#123;document&amp;#125;true\pagenumbering&amp;#123;gobble&amp;#125;truetrue\maketi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Basic structure of LaTeX file">
 <meta property="og:url" content="https://rogerchern.github.io/2015/07/08/Basic-structure-of-LaTeX-file/index.html">
 <meta property="og:site_name" content="Real Axis">
-<meta property="og:description" content="123456789101112\documentclass&amp;#123;article&amp;#125;\title&amp;#123;Title&amp;#125;\date&amp;#123;yyyy-mm-dd&amp;#125;\author&amp;#123;Author&amp;#125;\begin&amp;#123;document&amp;#125;	\pagenumbering&amp;#123;gobble&amp;#125;		\maketitle		\new">
+<meta property="og:description" content="123456789101112\documentclass&amp;#123;article&amp;#125;\title&amp;#123;Title&amp;#125;\date&amp;#123;yyyy-mm-dd&amp;#125;\author&amp;#123;Author&amp;#125;\begin&amp;#123;document&amp;#125;true\pagenumbering&amp;#123;gobble&amp;#125;truetrue\maketi">
 <meta property="og:updated_time" content="2015-07-08T03:15:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Basic structure of LaTeX file">
-<meta name="twitter:description" content="123456789101112\documentclass&amp;#123;article&amp;#125;\title&amp;#123;Title&amp;#125;\date&amp;#123;yyyy-mm-dd&amp;#125;\author&amp;#123;Author&amp;#125;\begin&amp;#123;document&amp;#125;	\pagenumbering&amp;#123;gobble&amp;#125;		\maketitle		\new">
+<meta name="twitter:description" content="123456789101112\documentclass&amp;#123;article&amp;#125;\title&amp;#123;Title&amp;#125;\date&amp;#123;yyyy-mm-dd&amp;#125;\author&amp;#123;Author&amp;#125;\begin&amp;#123;document&amp;#125;true\pagenumbering&amp;#123;gobble&amp;#125;truetrue\maketi">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -58,7 +60,7 @@
 
     <title> Basic structure of LaTeX file // Real Axis </title>
 </head>
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 <!--[if lte IE 8]>
   <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
     <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
@@ -104,7 +106,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             <i class="menu-item-icon icon-home"></i> <br />
-            首页
+            Home
           </a>
         </li>
       
@@ -112,7 +114,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories" rel="section">
             <i class="menu-item-icon icon-categories"></i> <br />
-            分类
+            Categories
           </a>
         </li>
       
@@ -120,7 +122,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             <i class="menu-item-icon icon-archives"></i> <br />
-            归档
+            Archives
           </a>
         </li>
       
@@ -159,7 +161,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          发表于
+          Posted on
           <time itemprop="dateCreated" datetime="2015-07-08T11:12:10+08:00" content="2015-07-08">
             2015-07-08
           </time>
@@ -179,7 +181,7 @@
       
 
       
-        <span itemprop="articleBody"><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">\documentclass&#123;article&#125;</span></span><br><span class="line"><span class="string">\title&#123;Title&#125;</span></span><br><span class="line"><span class="string">\date&#123;yyyy-mm-dd&#125;</span></span><br><span class="line"><span class="string">\author&#123;Author&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="string">\begin&#123;document&#125;</span></span><br><span class="line">	<span class="string">\pagenumbering&#123;gobble&#125;</span></span><br><span class="line">		<span class="string">\maketitle</span></span><br><span class="line">		<span class="string">\newpage</span></span><br><span class="line">	<span class="string">\pagenumbering&#123;arabic&#125;</span></span><br><span class="line">		<span class="string">\LaTeX</span></span><br><span class="line"><span class="string">\end&#123;document&#125;</span></span><br></pre></td></tr></table></figure>
+        <span itemprop="articleBody"><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">\documentclass&#123;article&#125;</span></span><br><span class="line"><span class="string">\title&#123;Title&#125;</span></span><br><span class="line"><span class="string">\date&#123;yyyy-mm-dd&#125;</span></span><br><span class="line"><span class="string">\author&#123;Author&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="string">\begin&#123;document&#125;</span></span><br><span class="line">true<span class="string">\pagenumbering&#123;gobble&#125;</span></span><br><span class="line">truetrue<span class="string">\maketitle</span></span><br><span class="line">truetrue<span class="string">\newpage</span></span><br><span class="line">true<span class="string">\pagenumbering&#123;arabic&#125;</span></span><br><span class="line">truetrue<span class="string">\LaTeX</span></span><br><span class="line"><span class="string">\end&#123;document&#125;</span></span><br></pre></td></tr></table></figure>
 </span>
       
     </div>
@@ -243,10 +245,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
+            Table Of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
+            Overview
           </li>
         </ul>
       
@@ -261,21 +263,21 @@
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">10</span>
-              <span class="site-state-item-name">日志</span>
+              <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
               <span class="site-state-item-count">5</span>
-              <span class="site-state-item-name">分类</span>
+              <span class="site-state-item-name">categories</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             
               <span class="site-state-item-count">0</span>
-              <span class="site-state-item-name">标签</span>
+              <span class="site-state-item-name">tags</span>
               
           </div>
 
@@ -302,7 +304,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <p class="post-toc-empty">This post does not have a Table Of Contents</p>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -328,11 +330,11 @@
 </div>
 
 <div class="powered-by">
-  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  主题 -
+  Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Mist
   </a>

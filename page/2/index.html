@@ -39,16 +39,15 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
 
 
-<meta name="description">
+<meta name="description" content="Roger Chern&apos;s Blog">
 <meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="https://rogerchern.github.io/categories/index.html">
+<meta property="og:title" content="Real Axis">
+<meta property="og:url" content="https://rogerchern.github.io/page/2/index.html">
 <meta property="og:site_name" content="Real Axis">
-<meta property="og:description">
-<meta property="og:updated_time" content="2015-07-05T08:59:14.000Z">
+<meta property="og:description" content="Roger Chern&apos;s Blog">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Real Axis">
+<meta name="twitter:description" content="Roger Chern&apos;s Blog">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -58,13 +57,7 @@
   };
 </script>
 
-    <title>
-  
-
-  
-    Category // Real Axis
-  
-</title>
+    <title> Real Axis </title>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
 <!--[if lte IE 8]>
@@ -80,7 +73,9 @@
 
 
 
-<div class="container one-column ">
+<div class="container one-column 
+   page-home 
+">
     <div class="headband"></div>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
         <div class="header-inner"><h1 class="site-meta">
@@ -146,30 +141,112 @@
         <div class="main-inner">
             <div id="content" class="content">
                 
+  <section id="posts" class="posts-expand">
+    
+      
 
-  <div id="posts" class="posts-expand">
-    
-    
-      <div class="category-all-page">
-        <div class="category-all-title">
-            5 categories in total
-        </div>
-        <div class="category-all">
-          <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Hexo/">Hexo</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/ML/">ML</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Unix-Linux/">Unix/Linux</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/math/">math</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/python-pip/">python pip</a><span class="category-list-count">1</span></li></ul>
-        </div>
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/08/19/Linear-Regression/" itemprop="url">
+                Linear Regression
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Posted on
+          <time itemprop="dateCreated" datetime="2015-08-19T16:03:11+08:00" content="2015-08-19">
+            2015-08-19
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; In
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/ML/" itemprop="url" rel="index"><span itemprop="name">ML</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
       </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h4 id="symbols">Symbols</h4>
+<ul>
+<li><span class="math inline">\(X\)</span> – the design matrix</li>
+<li><span class="math inline">\(\theta\)</span> – the parameters of model</li>
+<li><span class="math inline">\(n\)</span> – number of features <code>size(X,1)</code></li>
+<li><span class="math inline">\(m\)</span> – number of training samples <code>size(X,2)</code></li>
+<li><span class="math inline">\(x^{(i)}\)</span> – the i-th training sample <code>X(i,:)</code></li>
+<li><span class="math inline">\(x_j\)</span> – the j-th feature <code>X(:,j)</code></li>
+</ul>
+<h4 id="hypothesis">Hypothesis</h4>
+<p><span class="math display">\[h_\theta(x)=\theta^{T}x=\theta_0x_0+\theta_1x_1+\cdots+\theta_nx_n\]</span></p>
+<h4 id="cost-function-sqaured-error">Cost function (Sqaured Error)</h4>
+<p><span class="math display">\[J(\theta)=\dfrac{1}{2m}\sum_{i=1}^m[h_\theta(x^{(i)})-y^{(i)}]^2\]</span></p>
+<h4 id="gradient-descent">Gradient Descent</h4>
+<h5 id="normalization">Normalization</h5>
+<p><span class="math display">\[x_i:=\dfrac{x_i-\mu_i}{\sigma_i}\]</span></p>
+<h5 id="batch-version">Batch version</h5>
+<p><span class="math display">\[\theta_j:=\theta_j-\alpha\dfrac{1}{m}\sum_{i=1}^m(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)}\]</span></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:n</span><br><span class="line">    temp(<span class="built_in">i</span>) = theta(<span class="built_in">i</span>) - alpha / m * sum((X * theta - y) .* X(:,<span class="built_in">j</span>))</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:n</span><br><span class="line">    theta(<span class="built_in">i</span>) = temp(<span class="built_in">i</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<h5 id="random-version">Random version</h5>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
-  </div>
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/">&laquo;</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/3/">&raquo;</a>
+  </nav>
 
 
             </div>
 
             
 
-            
-              <div class="comments" id="comments">
-                
-              </div>
             
         </div>
 
@@ -277,13 +354,13 @@
   
   
   
-    
-    
+  
+  
 
   
 
 
-  
+
   
   <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
   <script type="text/javascript" src="/js/fancy-box.js?v=0.4.4"></script>
@@ -332,6 +409,13 @@
 </script>
 
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+  
+  
+
+  
 
 
 
