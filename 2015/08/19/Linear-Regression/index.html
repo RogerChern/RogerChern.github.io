@@ -1,11 +1,15 @@
 <!doctype html>
 <html class="theme-next use-motion theme-next-mist">
 <head>
-  
+    
 
 <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
@@ -17,7 +21,7 @@
 
 
 
-<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.3"/>
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.4"/>
 
 
     <meta name="description" content="Roger Chern's Blog" />
@@ -30,28 +34,50 @@
 
 
 
-  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.3" />
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
 
+
+<meta name="description" content="Symbols
+$X$ — the design matrix
+$\theta$ — the parameters of model
+$n$ — number of features  size(X,1)
+$m$ — number of training samples  size(X,2)
+$x^{(i)}$ — the i-th training sample X(i,:)
+$x _j$ —">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linear Regression">
+<meta property="og:url" content="https://rogerchern.github.io/2015/08/19/Linear-Regression/index.html">
+<meta property="og:site_name" content="Real Axis">
+<meta property="og:description" content="Symbols
+$X$ — the design matrix
+$\theta$ — the parameters of model
+$n$ — number of features  size(X,1)
+$m$ — number of training samples  size(X,2)
+$x^{(i)}$ — the i-th training sample X(i,:)
+$x _j$ —">
+<meta property="og:updated_time" content="2015-08-21T09:04:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linear Regression">
+<meta name="twitter:description" content="Symbols
+$X$ — the design matrix
+$\theta$ — the parameters of model
+$n$ — number of features  size(X,1)
+$m$ — number of training samples  size(X,2)
+$x^{(i)}$ — the i-th training sample X(i,:)
+$x _j$ —">
 
 
 <script type="text/javascript" id="hexo.configuration">
   var CONFIG = {
     scheme: 'Mist',
-    analytics: {
-      google: ''
-    },
     sidebar: 'post'
   };
 </script>
 
-
-
-
-  <title> Linear Regression // Real Axis </title>
+    <title> Linear Regression // Real Axis </title>
 </head>
-
-<body>
-  <!--[if lte IE 8]>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<!--[if lte IE 8]>
   <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
     <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
       <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
@@ -61,14 +87,15 @@
   </div>
 <![endif]-->
 
-  <div class="container one-column page-post-detail">
-    <div class="headband"></div>
 
-    <div id="header" class="header">
-      <div class="header-inner">
-        <h1 class="site-meta">
+
+
+<div class="container one-column page-post-detail">
+    <div class="headband"></div>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><h1 class="site-meta">
   <span class="logo-line-before"><i></i></span>
-  <a href="/" class="brand">
+  <a href="/" class="brand" rel="start">
       <span class="logo">
         <i class="icon-logo"></i>
       </span>
@@ -85,7 +112,7 @@
   </button>
 </div>
 
-<div class="site-nav">
+<nav class="site-nav">
   
 
   
@@ -93,7 +120,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/">
+          <a href="/" rel="section">
             <i class="menu-item-icon icon-home"></i> <br />
             首页
           </a>
@@ -101,7 +128,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories">
+          <a href="/categories" rel="section">
             <i class="menu-item-icon icon-categories"></i> <br />
             分类
           </a>
@@ -109,7 +136,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives">
+          <a href="/archives" rel="section">
             <i class="menu-item-icon icon-archives"></i> <br />
             归档
           </a>
@@ -119,26 +146,26 @@
   
 
   
-</div>
+</nav>
 
 
-      </div>
-    </div>
+        </div>
+    </header>
 
-    <div id="main" class="main">
-      <div class="main-inner">
-        <div id="content" class="content">
-          
+    <main id="main" class="main">
+        <div class="main-inner">
+            <div id="content" class="content">
+                
 
   <div id="posts" class="posts-expand">
     
 
-  <div class="post post-type-normal ">
-    <div class="post-header">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
       
       
-        <h1 class="post-title">
+        <h1 class="post-title" itemprop="name headline">
           
           
             
@@ -150,14 +177,17 @@
 
       <div class="post-meta">
         <span class="post-time">
-          发表于 2015-08-19
+          发表于
+          <time itemprop="dateCreated" datetime="2015-08-19T16:03:11+08:00" content="2015-08-19">
+            2015-08-19
+          </time>
         </span>
 
         
-          <span class="post-category">
+          <span class="post-category" >
             &nbsp; | &nbsp; 分类于
             
-              <a href="/categories/ML/">ML</a>
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/ML/" itemprop="url" rel="index"><span itemprop="name">ML</span></a></span>
 
               
               
@@ -170,7 +200,7 @@
           
         
       </div>
-    </div>
+    </header>
 
     <div class="post-body">
 
@@ -178,24 +208,24 @@
       
 
       
-        <h4 id="Symbols">Symbols</h4><ul>
+        <span itemprop="articleBody"><h4 id="Symbols">Symbols</h4><ul>
 <li>$X$ — the design matrix</li>
 <li>$\theta$ — the parameters of model</li>
 <li>$n$ — number of features  <code>size(X,1)</code></li>
 <li>$m$ — number of training samples  <code>size(X,2)</code></li>
 <li>$x^{(i)}$ — the i-th training sample <code>X(i,:)</code></li>
-<li>$x_j$ — the j-th feature <code>X(:,j)</code></li>
+<li>$x _j$ — the j-th feature <code>X(:,j)</code></li>
 </ul>
-<h4 id="Hypothesis">Hypothesis</h4><p>$$h_\theta(x)=\theta^{T}x=\theta_0x_0+\theta_1x_1+\cdots+\theta_nx_n$$</p>
-<h4 id="Cost_function_(Sqaured_Error)">Cost function (Sqaured Error)</h4><p>$$J(\theta)=\dfrac{1}{2m}\sum_{i=1}^m[h_\theta(x^{(i)})-y^{(i)}]^2$$</p>
-<h4 id="Gradient_Descent">Gradient Descent</h4><h5 id="Normalization">Normalization</h5><p>$$x_i:=\dfrac{x_i-\mu_i}{\sigma_i}$$</p>
-<h5 id="Batch_version">Batch version</h5><p>$$\theta_j:=\theta_j-\alpha\dfrac{1}{m}\sum_{i=1}^m(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)}$$</p>
+<h4 id="Hypothesis">Hypothesis</h4><p>$$h _\theta(x)=\theta^{T}x=\theta _0x _0+\theta _1x _1+\cdots+\theta _nx _n$$</p>
+<h4 id="Cost_function_(Sqaured_Error)">Cost function (Sqaured Error)</h4><p>$$J(\theta)=\dfrac{1}{2m}\sum <em>{i=1}^m[h </em>\theta(x^{(i)})-y^{(i)}]^2$$</p>
+<h4 id="Gradient_Descent">Gradient Descent</h4><h5 id="Normalization">Normalization</h5><p>$$x _i:=\dfrac{x _i-\mu _i}{\sigma _i}$$</p>
+<h5 id="Batch_version">Batch version</h5><p>$$\theta <em>j:=\theta _j-\alpha\dfrac{1}{m}\sum </em>{i=1}^m(h _\theta(x^{(i)})-y^{(i)})x _j^{(i)}$$</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:n</span><br><span class="line">    temp(<span class="built_in">i</span>) = theta(<span class="built_in">i</span>) - alpha / m * sum((X * theta - y) .* X(:,<span class="built_in">j</span>))</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:n</span><br><span class="line">    theta(<span class="built_in">i</span>) = temp(<span class="built_in">i</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<h5 id="Random_version">Random version</h5>
+<h5 id="Random_version">Random version</h5></span>
       
     </div>
 
-    <div class="post-footer">
+    <footer class="post-footer">
       
 
       
@@ -206,7 +236,7 @@
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/19/Use-pip-to-install-a-certain-version-of-package/">Use pip to install a certain version of package</a>
+              <a href="/2015/08/19/Use-pip-to-install-a-certain-version-of-package/" rel="next">Use pip to install a certain version of package</a>
             
           </div>
         </div>
@@ -214,30 +244,29 @@
 
       
       
-    </div>
-  </div>
+    </footer>
+  </article>
 
 
 
     <div class="post-spread">
       
     </div>
-
-    
-      <div class="comments" id="comments">
-        
-      </div>
-    
   </div>
 
 
+            </div>
+
+            
+
+            
+              <div class="comments" id="comments">
+                
+              </div>
+            
         </div>
 
         
-      </div>
-
-
-      
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -247,12 +276,12 @@
     </div>
   </div>
 
-  <div id="sidebar" class="sidebar">
+  <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -261,13 +290,13 @@
         </ul>
       
 
-      <div class="site-overview">
-        <div class="site-author motion-element">
-          <img class="site-author-image" src="/images/ali.jpg" alt="Roger Chern" />
-          <p class="site-author-name">Roger Chern</p>
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/ali.jpg" alt="Roger Chern" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Roger Chern</p>
         </div>
-        <p class="site-description motion-element">Roger Chern's Blog</p>
-        <div class="site-state motion-element">
+        <p class="site-description motion-element" itemprop="description">Roger Chern's Blog</p>
+        <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">9</span>
@@ -289,7 +318,7 @@
               
           </div>
 
-        </div>
+        </nav>
 
         
 
@@ -303,11 +332,11 @@
         <div class="links-of-author motion-element">
           
         </div>
-        
-      </div>
+
+      </section>
 
       
-        <div class="post-toc-wrap sidebar-panel-active">
+        <section class="post-toc-wrap sidebar-panel-active">
           <div class="post-toc-indicator-top post-toc-indicator"></div>
           <div class="post-toc">
             
@@ -316,25 +345,25 @@
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
-        </div>
+        </section>
       
 
     </div>
-  </div>
+  </aside>
 
 
-    </div>
+    </main>
 
-    <div id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="copyright" >
   
   &copy; &nbsp; 
-  2015
+  <span itemprop="copyrightYear">2015</span>
   <span class="with-love">
     <i class="icon-heart"></i>
   </span>
-  <span class="author">Roger Chern</span>
+  <span class="author" itemprop="copyrightHolder">Roger Chern</span>
 </div>
 
 <div class="powered-by">
@@ -350,37 +379,44 @@
 
 
 
-      </div>
-    </div>
+        </div>
+    </footer>
 
     <div class="back-to-top"></div>
-  </div>
+</div>
 
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+<script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
   
   
+  
+    
+    
 
+  
+
+
+  
   
   <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.3"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.4"></script>
 
 
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.3"></script>
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.4"></script>
   
 
   <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
   <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
 
-  <script type="text/javascript" src="/js/motion_global.js?v=0.4.3" id="motion.global"></script>
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.4" id="motion.global"></script>
 
 
 
   <script type="text/javascript" src="/js/search-toggle.js"></script>
 
+
   
-  
-<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.3" id="bootstrap.scrollspy.custom"></script>
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.4" id="bootstrap.scrollspy.custom"></script>
 
 
 <script type="text/javascript" id="sidebar.toc.highlight">
@@ -413,7 +449,6 @@
     }
 
     function getTOCMaxHeight () {
-      var $sidebarInner = $('.sidebar-inner');
       var height = $('.sidebar').height() -
                    $tocSelector.position().top -
                    $('.post-toc-indicator-bottom').height();
@@ -435,7 +470,7 @@
       )
     }
 
-    $(document).on('sidebar.didShow', function () {
+    $(document).on('sidebar.motion.complete', function () {
       processTOC();
     });
 
@@ -452,7 +487,6 @@
       element.on('mousewheel DOMMouseScroll', function (event) {
           var oe = event.originalEvent;
           var delta = oe.wheelDelta || -oe.detail;
-          var self = this;
 
           this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
           event.preventDefault();
@@ -462,72 +496,94 @@
     }
 
     function tocOverflowIndicator (indicator, action) {
-      $(indicator).velocity('stop').velocity({
-        opacity: action === 'show' ? 0.4 : 0
-      }, { duration: 100 });
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 0.4 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
     }
 
   });
 </script>
 
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
 
-  <script type="text/javascript" id="sidebar.nav">
-    $(document).ready(function () {
-      var html = $('html');
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
 
-      $('.sidebar-nav li').on('click', function () {
-        var item = $(this);
-        var activeTabClassName = 'sidebar-nav-active';
-        var activePanelClassName = 'sidebar-panel-active';
-        if (item.hasClass(activeTabClassName)) {
-          return;
-        }
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
 
-        var currentTarget = $('.' + activePanelClassName);
-        var target = $('.' + item.data('target'));
-
-        currentTarget.velocity('transition.slideUpOut', 200, function () {
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
           target
             .velocity('stop')
-            .velocity('transition.slideDownIn', 200)
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
             .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
         });
 
-        item.siblings().removeClass(activeTabClassName);
-        item.addClass(activeTabClassName);
-      });
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
 
-      $('.post-toc a').on('click', function (e) {
-        e.preventDefault();
-        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
         html.velocity('stop').velocity('scroll', {
           offset: offset  + 'px',
           mobileHA: false
-        });
-      });
-
-      // Expand sidebar on post detail page by default, when post has a toc.
-      var $tocContent = $('.post-toc-content');
-      if (isDesktop() && CONFIG.sidebar === 'post') {
-        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-          displaySidebar();
-        }
-      }
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
     });
-  </script>
 
-
-
-
-  <script type="text/javascript">
-    $(document).ready(function () {
-      if (CONFIG.sidebar === 'always') {
+    // Expand sidebar on post detail page by default, when post has a toc.
+    var $tocContent = $('.post-toc-content');
+    if (isDesktop() && CONFIG.sidebar === 'post') {
+      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
         displaySidebar();
       }
-    });
-  </script>
+    }
+  });
+</script>
 
-  
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        if (CONFIG.sidebar === 'always') {
+            displaySidebar();
+        }
+    });
+</script>
+
+
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     tex2jax: {
@@ -550,17 +606,20 @@
 <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 
-  
-  
-  
-
-  
 
 
 
 
-  
-  
 
+<!-- lazyload -->
+<script type="text/javascript" src="/js/lazyload.js"></script>
+<script type="text/javascript">
+    jQuery(function () {
+        jQuery("#posts img").lazyload({
+            placeholder: "/images/loading.gif",
+            effect: "fadeIn"
+        });
+    });
+</script>
 </body>
 </html>
