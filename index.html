@@ -194,20 +194,27 @@
 
       
         
-          <span itemprop="articleBody"><h4 id="Symbols">Symbols</h4><ul>
-<li>$X$ — the design matrix</li>
-<li>$\theta$ — the parameters of model</li>
-<li>$n$ — number of features  <code>size(X,1)</code></li>
-<li>$m$ — number of training samples  <code>size(X,2)</code></li>
-<li>$x^{(i)}$ — the i-th training sample <code>X(i,:)</code></li>
-<li>$x _j$ — the j-th feature <code>X(:,j)</code></li>
+          <span itemprop="articleBody"><h4 id="symbols">Symbols</h4>
+<ul>
+<li><span class="math inline">\(X\)</span> – the design matrix</li>
+<li><span class="math inline">\(\theta\)</span> – the parameters of model</li>
+<li><span class="math inline">\(n\)</span> – number of features <code>size(X,1)</code></li>
+<li><span class="math inline">\(m\)</span> – number of training samples <code>size(X,2)</code></li>
+<li><span class="math inline">\(x^{(i)}\)</span> – the i-th training sample <code>X(i,:)</code></li>
+<li><span class="math inline">\(x_j\)</span> – the j-th feature <code>X(:,j)</code></li>
 </ul>
-<h4 id="Hypothesis">Hypothesis</h4><p>$$h _\theta(x)=\theta^{T}x=\theta _0x _0+\theta _1x _1+\cdots+\theta _nx _n$$</p>
-<h4 id="Cost_function_(Sqaured_Error)">Cost function (Sqaured Error)</h4><p>$$J(\theta)=\dfrac{1}{2m}\sum <em>{i=1}^m[h </em>\theta(x^{(i)})-y^{(i)}]^2$$</p>
-<h4 id="Gradient_Descent">Gradient Descent</h4><h5 id="Normalization">Normalization</h5><p>$$x _i:=\dfrac{x _i-\mu _i}{\sigma _i}$$</p>
-<h5 id="Batch_version">Batch version</h5><p>$$\theta <em>j:=\theta _j-\alpha\dfrac{1}{m}\sum </em>{i=1}^m(h _\theta(x^{(i)})-y^{(i)})x _j^{(i)}$$</p>
+<h4 id="hypothesis">Hypothesis</h4>
+<p><span class="math display">\[h_\theta(x)=\theta^{T}x=\theta_0x_0+\theta_1x_1+\cdots+\theta_nx_n\]</span></p>
+<h4 id="cost-function-sqaured-error">Cost function (Sqaured Error)</h4>
+<p><span class="math display">\[J(\theta)=\dfrac{1}{2m}\sum_{i=1}^m[h_\theta(x^{(i)})-y^{(i)}]^2\]</span></p>
+<h4 id="gradient-descent">Gradient Descent</h4>
+<h5 id="normalization">Normalization</h5>
+<p><span class="math display">\[x_i:=\dfrac{x_i-\mu_i}{\sigma_i}\]</span></p>
+<h5 id="batch-version">Batch version</h5>
+<p><span class="math display">\[\theta_j:=\theta_j-\alpha\dfrac{1}{m}\sum_{i=1}^m(h_\theta(x^{(i)})-y^{(i)})x_j^{(i) }\]</span></p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:n</span><br><span class="line">    temp(<span class="built_in">i</span>) = theta(<span class="built_in">i</span>) - alpha / m * sum((X * theta - y) .* X(:,<span class="built_in">j</span>))</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:n</span><br><span class="line">    theta(<span class="built_in">i</span>) = temp(<span class="built_in">i</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-<h5 id="Random_version">Random version</h5></span>
+<h5 id="random-version">Random version</h5>
+</span>
         
       
     </div>
@@ -280,7 +287,7 @@
       
         
           <span itemprop="articleBody"><p><code>pip install packge_name==x.x.x</code></p>
-<p>The “Big Split” introduced by ipython 4 will cause a lot of packages depended on it fail to work. To fix it, we simply use the ipython 3.2.1.<br><code>pip install ipython==3.2.1</code> </p>
+<p>The “Big Split” introduced by ipython 4 will cause a lot of packages depended on it fail to work. To fix it, we simply use the ipython 3.2.1. <code>pip install ipython==3.2.1</code></p>
 </span>
         
       
@@ -353,7 +360,8 @@
 
       
         
-          <span itemprop="articleBody"><h3 id="Misc">Misc</h3><ul>
+          <span itemprop="articleBody"><h3 id="misc">Misc</h3>
+<ul>
 <li>Be aware of the firewall. On Fedora 22, use <code>firewall-cmd</code> to let traffic go through certain ports.</li>
 <li>If the host/guest IPs are left blank, all the traffic associated with the port will be forwarded.</li>
 </ul>
@@ -418,7 +426,8 @@
 
       
         
-          <span itemprop="articleBody"><h3 id="Hello_World">Hello World</h3><p>this is a test</p>
+          <span itemprop="articleBody"><h3 id="hello-world">Hello World</h3>
+<p>this is a test</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> &lt;stdio.h&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> goods = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, goods);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
 </span>
         
@@ -554,7 +563,7 @@
 
       
         
-          <span itemprop="articleBody"><p>Use <code>/{pattern}</code> to search forward<br>Use <code>?{pattern}</code> to search backward</p>
+          <span itemprop="articleBody"><p>Use <code>/{pattern}</code> to search forward Use <code>?{pattern}</code> to search backward</p>
 </span>
         
       
@@ -616,7 +625,8 @@
 
       
         
-          <span itemprop="articleBody"></span>
+          <span itemprop="articleBody">
+</span>
         
       
     </div>
@@ -688,8 +698,10 @@
 
       
         
-          <span itemprop="articleBody"><h3 id="To_invoke_the_search">To invoke the search</h3><p>hit / in the opened manpage</p>
-<h3 id="To_skip_to_the_next/previous_result">To skip to the next/previous result</h3><p>N &amp; shift+N</p>
+          <span itemprop="articleBody"><h3 id="to-invoke-the-search">To invoke the search</h3>
+<p>hit / in the opened manpage</p>
+<h3 id="to-skip-to-the-nextprevious-result">To skip to the next/previous result</h3>
+<p>N &amp; shift+N</p>
 </span>
         
       
@@ -762,7 +774,10 @@
 
       
         
-          <span itemprop="articleBody"><p>$$ \int_0^\infty \sin x \mathrm{d}x $$<br>Simple inline $a = b + c$.<br>$$\subset\frac{\partial u}{\partial t}<br>= h^2 \left( \frac{\partial^2 u}{\partial x^2} +<br>\frac{\partial^2 u}{\partial y^2} +<br>\frac{\partial^2 u}{\partial z^2}\right)$$</p>
+          <span itemprop="articleBody"><p><span class="math display">\[ \int_0^\infty \sin x \mathrm{d}x \]</span> Simple inline <span class="math inline">\(a = b + c\)</span>. <span class="math display">\[\subset\frac{\partial u}{\partial t}
+= h^2 \left( \frac{\partial^2 u}{\partial x^2} +
+\frac{\partial^2 u}{\partial y^2} +
+\frac{\partial^2 u}{\partial z^2}\right)\]</span></p>
 </span>
         
       
