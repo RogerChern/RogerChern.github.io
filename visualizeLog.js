@@ -127,7 +127,7 @@ function drawCombinedGraph(data) {
                     position: 'outer-middle'
                 },
                 min: 0,
-                max: 1,
+                // max: 1,
                 padding: { top: 0, bottom: 0 }
             }
         },
