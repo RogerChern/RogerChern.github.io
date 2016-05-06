@@ -116,7 +116,9 @@ function drawCombinedGraph(data) {
                     position: 'outer-middle'
                 },
                 padding: { bottom: 0 },
-                tick: {}
+                tick: {
+                    format: function (d) { return Math.pow(10,d).toFixed(2);
+                }
             },
             y2: {
                 show: true,
