@@ -59,10 +59,10 @@ function setLog() {
     var col3 = ['accuracy-val'];
     var col4 = ['loss-val'];
     var col5 = ['val_iters'];
-    col1.push.apply(col1, train_loss.map(function (num) { return Math.log(num); }));
+    col1.push.apply(col1, train_loss.map(function (num) { return Math.log10(num); }));
     col2.push.apply(col2, train_iter);
     col3.push.apply(col3, test_accuracy);
-    col4.push.apply(col4, test_loss.map(function (num) { return Math.log(num); }));
+    col4.push.apply(col4, test_loss.map(function (num) { return Math.log10(num); }));
     col5.push.apply(col5, test_iter);
     var data = {
         'xs': { 'accuracy-val': 'val_iters', 'loss-train': 'train_iters', 'loss-val': 'val_iters' },
