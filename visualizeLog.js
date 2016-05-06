@@ -117,7 +117,7 @@ function drawCombinedGraph(data) {
                 },
                 padding: { bottom: 0 },
                 tick: {
-                    format: function (d) { return Math.pow(10,d).toFixed(2);
+                    format: function (d) { return Math.pow(10,d).toFixed(2) };
                 }
             },
             y2: {
